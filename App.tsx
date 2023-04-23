@@ -1,5 +1,5 @@
 import React from 'react';
-import {NativeModules, SafeAreaView} from 'react-native';
+import {NativeModules, SafeAreaView, StyleSheet} from 'react-native';
 import {NativeBaseProvider, Box, Button} from 'native-base';
 
 export default function App() {
@@ -8,16 +8,12 @@ export default function App() {
   };
 
   const runCamera = () => {
-    // NativeModules.cameraModule.openCamera();
-    console.log(
-      'NativeModules.cameraModule',
-      NativeModules.CameraModule.openCamera(),
-    );
+    NativeModules.CameraModule.openCamera();
   };
 
   return (
     <NativeBaseProvider>
-      <SafeAreaView>
+      <SafeAreaView style={styles.wrapper}>
         <Box>Hello world</Box>
 
         <Button width={100} height={50} onPress={killApp}>
@@ -31,3 +27,10 @@ export default function App() {
     </NativeBaseProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  wrapper: {
+    backgroundColor: '#fff',
+    flex: 1,
+  },
+});
