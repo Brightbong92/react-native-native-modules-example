@@ -21,7 +21,7 @@ public class CameraModule extends ReactContextBaseJavaModule  {
     @NonNull
     @Override
     public String getName() {
-        return "cameraModule";
+        return "CameraModule";
     }
 
     @ReactMethod

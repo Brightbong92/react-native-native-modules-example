@@ -25,6 +25,6 @@ public class ExitModule extends ReactContextBaseJavaModule  {
     @NonNull
     @Override
     public String getName() {
-        return "exitModule";
+        return "ExitModule";
     }
 }
