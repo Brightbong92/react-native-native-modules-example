@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">nativeModule</string>
+    <string name="camera_error">Unable to open camera.</string>
+</resources>
