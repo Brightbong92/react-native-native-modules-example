@@ -16,14 +16,11 @@ public class DeviceInfoModule extends ReactContextBaseJavaModule {
     }
 
     // React-Native에서 사용할수 있게 메소드 어노테이션 정의
-    // 비동기함수
-    @ReactMethod
-    public void getSystemName(Promise promise) {
-        try{
-            promise.resolve("Android");
-        }catch (Exception e) {
-            promise.reject(e);
-        }
+    // 기본적으로 ReactMethod는 비동기 지만,
+    // isBlockingSynchronousMethod옵션을 이용해 동기적으로 사용가능
+    @ReactMethod(isBlockingSynchronousMethod = true)
+    public String getSystemName() {
+        return "Android";
     }
 
     @NonNull

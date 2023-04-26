@@ -11,8 +11,8 @@ export default function App() {
     NativeModules.CameraModule.openCamera();
   };
 
-  const getDeviceInfo = async () => {
-    const systemName = await NativeModules.DeviceInfoModule.getSystemName();
+  const getDeviceInfo = () => {
+    const systemName = NativeModules.DeviceInfoModule.getSystemName();
     Alert.alert(systemName);
   };
 
