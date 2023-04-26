@@ -14,8 +14,8 @@ public class CameraModule extends ReactContextBaseJavaModule  {
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
 
-    CameraModule(ReactApplicationContext context) {
-        super(context);
+    CameraModule(ReactApplicationContext reactApplicationContext) {
+        super(reactApplicationContext);
     }
 
     @NonNull

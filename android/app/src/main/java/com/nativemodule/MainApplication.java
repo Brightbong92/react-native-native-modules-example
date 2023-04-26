@@ -27,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
           // packages.add(new MyReactNativePackage());
             packages.add(new ExitModulePackages());
             packages.add(new CameraModulePackages());
+            packages.add(new DeviceInfoModulePackages());
           return packages;
         }
 

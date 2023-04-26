@@ -10,8 +10,8 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 
 public class ExitModule extends ReactContextBaseJavaModule  {
-    ExitModule(ReactApplicationContext context) {
-        super(context);
+    ExitModule(ReactApplicationContext reactApplicationContext) {
+        super(reactApplicationContext);
     }
 
     @ReactMethod
