@@ -1,5 +1,11 @@
 import React from 'react';
-import {Alert, NativeModules, SafeAreaView, StyleSheet} from 'react-native';
+import {
+  Alert,
+  NativeModules,
+  Platform,
+  SafeAreaView,
+  StyleSheet,
+} from 'react-native';
 import {NativeBaseProvider, Box, Button, Text} from 'native-base';
 
 export default function App() {
@@ -11,9 +17,19 @@ export default function App() {
     NativeModules.CameraModule.openCamera();
   };
 
-  const getDeviceInfo = () => {
-    const systemName = NativeModules.DeviceInfoModule.getSystemName();
-    Alert.alert(systemName);
+  const getDeviceInfo = async () => {
+    if (Platform.OS === 'android') {
+      const systemName = NativeModules.DeviceInfoModule.getSystemName();
+      Alert.alert(systemName);
+    } else if (Platform.OS === 'ios') {
+      const systemName =
+        await NativeModules.DeviceInfoModule.getSystemName().then(
+          (res: string) => {
+            return res;
+          },
+        );
+      Alert.alert(systemName);
+    }
   };
 
   return (
